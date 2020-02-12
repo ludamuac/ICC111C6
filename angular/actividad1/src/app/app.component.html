@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="title">Ejercicio</h1>
+
+  <div class="form">
+    <input type="text" #myInput>
+    <br>
+    <button (click)="updateValue(myInput)">Actualizar Valor</button>
+  </div>
+
+  <p>El valor de mi variable es:</p>
+  <p>{{ inputValue }}</p>
+</div>
