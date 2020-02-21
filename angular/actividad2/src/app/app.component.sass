@@ -1,0 +1,23 @@
+.collection.with-header .collection-header,
+.collection .collection-item
+  background-color: #1f2125
+
+a.btn-large
+  width: 100%
+  font-weight: 700
+
+  &.income
+    background-color: #27ae60
+
+  &.expense
+    background-color: #c0392b
+
+input[type="number"]:not(.browser-default)
+  color: white
+
+input[type="number"]:not(.browser-default):focus:not([readonly])
+  border-bottom: 1px solid white
+  box-shadow: 0 1px 0 0 white
+
+input[type="number"]:not(.browser-default):focus:not([readonly]) + label
+  color: white
