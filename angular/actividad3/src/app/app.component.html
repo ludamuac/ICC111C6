@@ -1,0 +1,49 @@
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Notes</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      <h3>Add a New Note</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m8 offset-m2 input-field">
+      <input #title id="title" type="text" class="validate">
+      <label for="title">Title</label>
+    </div>
+    <div class="col s12 m8 offset-m2 input-field">
+        <textarea #content id="content" class="materialize-textarea validate"></textarea>
+        <label for="content">Content</label>
+    </div>
+    <div class="col s12 m8 offset-m2">
+      <a class="waves-effect waves-light btn-large" (click)="createNote(title, content)">Create Note</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      <h3>Your Notes</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      <ul class="collapsible" [hidden]="notes.length < 1">
+        <li *ngFor="let note of notes">
+          <div class="collapsible-header">{{ note.title }}</div>
+          <div class="collapsible-body"><span>{{ note.content }}</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer></footer>
