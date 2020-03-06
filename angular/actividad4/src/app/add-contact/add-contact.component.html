@@ -1,0 +1,68 @@
+<div class="row">
+  <h1>Add Contact</h1>
+</div>
+
+<div class="row">
+  <div class="col s12 l4">
+    <img class="materialboxed" width="100%" src="https://w0.pngwave.com/png/966/53/user-profile-facebook-passport-png-clip-art.png">
+  </div>
+  <form class="col s12 l8" [formGroup]="form">
+
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">assignment_ind</i>
+        <input id="contactId" type="text" formControlName="id">
+        <label class="active" for="contactId">Contact ID</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="name" type="text" formControlName="name">
+        <label class="active" for="name">Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">local_phone</i>
+        <input id="cellphone" type="tel" formControlName="cellphone">
+        <label class="active" for="cellphone">Cellphone</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <input id="email" type="email" formControlName="email">
+        <label class="active" for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <a class="waves-effect waves-light btn-large delete" (click)="addContact()">Add</a>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+<!-- Modal Structure -->
+<div id="errorModal" class="modal">
+  <div class="modal-content">
+    <h4>Error</h4>
+    <p>{{ error }}</p>
+  </div>
+  <div class="modal-footer">
+    <a class="modal-close waves-effect waves-green btn-flat">Got it!</a>
+  </div>
+</div>
+
+<div id="addConfirmationModal" class="modal">
+  <div class="modal-content">
+    <h4>Contact Added!</h4>
+    <p>Your new contact has been added to your list successfully!</p>
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect waves-green btn-flat" (click)="goToHome()">Got it!</a>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<nav>
+  <div class="nav-wrapper container">
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <a [routerLink]="['']" class="brand-logo">ContactIn</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a [routerLink]="['']">Home</a></li>
+      <li><a [routerLink]="['contact','add']">Add</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul id="slide-out" class="sidenav">
+  <li><a class="sidenav-close" [routerLink]="['']">Home</a></li>
+  <li><a class="sidenav-close" [routerLink]="['contact','add']">Add</a></li>
+</ul>

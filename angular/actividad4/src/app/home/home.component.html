@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col s12">
+    <h1>My Contacts</h1>
+  </div>
+</div>
+
+<ng-container *ngIf="contacts?.length > 0 then contactList else noContacts"></ng-container>
+
+<ng-template #contactList>
+  <div class="row">
+    <div class="col s12 l3" *ngFor="let contact of contacts">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://w0.pngwave.com/png/966/53/user-profile-facebook-passport-png-clip-art.png">
+        </div>
+        <div class="card-content">
+          <span class="card-title center-align">{{ contact.name }}</span>
+          <p class="center-align">{{ contact.cellphone }}</p>
+          <p class="center-align">{{ contact.email }}</p>
+        </div>
+        <div class="card-action center-align">
+          <a [routerLink]="['contact', contact.id]">View Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noContacts>
+  <div class="row">
+    <div class="col s12">
+      <h5 class="center-align">You have no contacts in your list.</h5>
+    </div>
+  </div>
+</ng-template>
