@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>feed</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let post of posts">
+    <img [src]="post.imageUrl"/>
+    <ion-card-header>
+      <ion-card-subtitle>@{{ post.username }}</ion-card-subtitle>
+      <ion-card-subtitle>
+        <ion-icon name="heart-outline"></ion-icon>
+        {{ post.likes | number }} likes
+      </ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>{{ post.description }}</ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        Antonio Godoy
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        @antoniog
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">Posts</ion-col>
+      <ion-col size="4">Followers</ion-col>
+      <ion-col size="4">Following</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">10</ion-col>
+      <ion-col size="4">5,000</ion-col>
+      <ion-col size="4">1</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block" fill="outline">Edit Settings</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" *ngFor="let post of posts">
+        <img [src]="post.imageUrl" (click)="goToPost('1')">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
