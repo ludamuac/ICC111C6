@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,8 @@ export class SignupPage implements OnInit {
 
   signupForm: FormGroup;
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
     this.initForm();
@@ -35,7 +37,7 @@ export class SignupPage implements OnInit {
 
       this.afAuth.auth.createUserWithEmailAndPassword(email, password)
         .then((credentials) => {
-          console.log(credentials);
+          this.navCtrl.navigateForward(['login']);
         })
         .catch((error) => {
           console.log(error);
