@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -42,12 +43,19 @@ export class ProfilePage implements OnInit {
     },
   ];
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private authService: AuthService,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
   goToPost(postId: string) {
     this.navCtrl.navigateForward(['tabs', 'profile', 'post', postId]);
+  }
+
+  logout(): void {
+    this.authService.logout().then(() => {
+      this.navCtrl.navigateRoot(['']);
+    });
   }
 }

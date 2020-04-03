@@ -13,7 +13,11 @@ export class LoginPage implements OnInit {
   loginForm: FormGroup;
 
   constructor(private authService: AuthService,
-              private navCtrl: NavController) { }
+              private navCtrl: NavController) {
+    if (this.authService.isLoggedIn()) {
+      this.navCtrl.navigateRoot(['/tabs/feed']);
+    }
+  }
 
   ngOnInit() {
     this.initForm();

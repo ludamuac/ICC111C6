@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPage implements OnInit {
 
-  constructor() { }
+  users = [];
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+  }
+
+  search(event: any) {
+    const username = event.detail.value;
+
+    if (username.length > 0) {
+      this.userService.searchUsers(username).subscribe((users) => {
+        this.users = users;
+      });
+    } else {
+      this.users = [];
+    }
   }
 
 }

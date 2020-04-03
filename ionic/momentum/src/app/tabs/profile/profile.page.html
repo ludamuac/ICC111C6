@@ -1,6 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>antoniog</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,13 +22,13 @@
     </ion-row>
 
     <ion-row>
-      <ion-col size="12">
+      <ion-col size="12" class="ion-text-center">
         Antonio Godoy
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="12">
+      <ion-col size="12" class="ion-text-center">
         @antoniog
       </ion-col>
     </ion-row>
@@ -30,15 +36,15 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="4">Posts</ion-col>
-      <ion-col size="4">Followers</ion-col>
-      <ion-col size="4">Following</ion-col>
+      <ion-col size="4" class="ion-text-center">Posts</ion-col>
+      <ion-col size="4" class="ion-text-center">Followers</ion-col>
+      <ion-col size="4" class="ion-text-center">Following</ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col size="4">10</ion-col>
-      <ion-col size="4">5,000</ion-col>
-      <ion-col size="4">1</ion-col>
+      <ion-col size="4" class="ion-text-center">10</ion-col>
+      <ion-col size="4" class="ion-text-center">5,000</ion-col>
+      <ion-col size="4" class="ion-text-center">1</ion-col>
     </ion-row>
 
     <ion-row>

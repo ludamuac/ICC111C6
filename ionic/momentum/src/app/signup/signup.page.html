@@ -1,42 +1,75 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
-
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <div class="header-container">
+    <h1>Momentum</h1>
+    <p>Sign up and join your friends' moments.</p>
+  </div>
+
   <form [formGroup]="signupForm">
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input formControlName="email" placeholder="Johndoe@company.com"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">Name</ion-label>
-      <ion-input formControlName="name" placeholder="John Doe"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">Username</ion-label>
-      <ion-input formControlName="username" placeholder="johndoe123"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input formControlName="password" type="password"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label position="floating">Confirm Password</ion-label>
-      <ion-input formControlName="confirmPassword" type="password"></ion-input>
-    </ion-item>
-  
-    <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Sign Up</ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" placeholder="Johndoe@company.com"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input formControlName="name" placeholder="John Doe"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input formControlName="username" placeholder="johndoe123"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input formControlName="confirmPassword" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Sign Up</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </form>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="goToLogin()" expand="full" fill="none">Already have an account? Log In!</ion-button>
+  </ion-toolbar>
+</ion-footer>

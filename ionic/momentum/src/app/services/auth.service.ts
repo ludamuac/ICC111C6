@@ -14,7 +14,6 @@ export class AuthService {
     this.afa.authState.subscribe((user) => {
       if (user) {
         this.setUser(user);
-        this.navCtrl.navigateRoot(['/tabs/feed']);
       } else {
         this.navCtrl.navigateRoot(['']);
       }
@@ -33,7 +32,6 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     const user = localStorage.getItem('user');
-    console.log(user);
     return (user !== null && user !== undefined);
   }
 
@@ -50,12 +48,8 @@ export class AuthService {
     return this.afa.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  logout(): void {
-    this.afa.auth.signOut().then(() => {
-      this.clearUser();
-      this.navCtrl.navigateRoot(['']);
-    }).catch((error) => {
-      console.log(error);
-    });
+  logout(): Promise<void> {
+    this.clearUser();
+    return this.afa.auth.signOut();
   }
 }
