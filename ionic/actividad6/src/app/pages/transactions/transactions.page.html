@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Transactions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let group of transactions">
+    <ion-list-header lines="full">
+      <ion-label>{{ group.date | date: 'fullDate' }}</ion-label>
+    </ion-list-header>
+    <ion-item lines="inset" detail (click)="seeDetail(transaction.id)" *ngFor="let transaction of group.transactions">
+      <ion-label>
+        <h2>{{ transaction.total | currency }}</h2>
+        <p>{{ transaction.totalQuantity }} {{ transaction.totalQuantity > 1 ? 'items.' : 'item.' }}</p>
+      </ion-label>
+      <ion-note>{{ transaction.date | date: 'shortTime' }}</ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

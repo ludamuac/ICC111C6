@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="processPayment()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tips</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-align-items-center">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <div class="ion-text-center">
+          <h1>Add a tip?</h1>
+        </div>
+
+        <div class="ion-text-center">
+          <h3>{{ this.cart.total | currency}}</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="addTip((this.cart.total * .20))" expand="block">20% ({{ (this.cart.total * .20)| currency }})</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="addTip((this.cart.total * .15))" expand="block">15% ({{ (this.cart.total * .15)| currency }})</ion-button>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="addTip((this.cart.total * .10))" expand="block">10% ({{ (this.cart.total * .10)| currency }})</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="presentCustomTipPrompt()" expand="block">Custom Tip</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button (click)="processPayment()" expand="block">No Tip</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

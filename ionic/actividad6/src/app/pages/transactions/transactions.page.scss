@@ -1,0 +1,16 @@
+ion-list {
+    padding: 0;
+
+    ion-list-header {
+        ion-label {
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+
+    ion-note {
+        font-size: 14px;
+        height: 100%;
+        display: inherit;
+    }
+}

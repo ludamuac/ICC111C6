@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu/transactions"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Transaction {{ transaction?.total | currency }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list id="item-list" lines="full">
+    <ion-list-header lines="none">
+      <ion-label>{{ transaction?.date | date: 'fullDate' }}</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Registered at {{ transaction?.date | date: 'shortTime' }}</ion-label>
+    </ion-item>
+    <ion-item *ngFor="let item of transaction?.items">
+      <ion-avatar slot="start">
+        <div class="text-avatar">
+          {{ item.name.trim().slice(0,2) }}
+        </div>
+      </ion-avatar>
+      <ion-label>{{ item.name }} (x{{ item.quantity }})</ion-label>
+      <ion-note slot="end">{{ item.totalPrice | currency }}</ion-note>
+    </ion-item>
+    <ion-item *ngFor="let item of transaction?.customEntries">
+      <ion-avatar slot="start">
+        <div class="text-avatar">
+          {{ item.name.trim().slice(0,2) }}
+        </div>
+      </ion-avatar>
+      <ion-label>{{ item.name }}</ion-label>
+      <ion-note slot="end">{{ item.price | currency }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Subtotal</ion-label>
+      <ion-note slot="end">{{ transaction?.subtotal | currency }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tax (9.75%)</ion-label>
+      <ion-note slot="end">{{ transaction?.tax | currency }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tips</ion-label>
+      <ion-note slot="end">{{ transaction?.tips | currency }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Total</b></ion-label>
+      <ion-note class="total" slot="end"><b>{{ transaction?.total | currency }}</b></ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

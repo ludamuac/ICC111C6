@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button (click)="dismiss()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="itemForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Name</ion-label>
+            <ion-input formControlName="name" type="text" clearInput></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Price</ion-label>
+            <ion-input formControlName="price" type="number" min="0" clearInput></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12">
+          <ion-button (click)="onSubmit()" expand="block">Update Item</ion-button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12">
+          <ion-button (click)="dismiss()" expand="block" fill="outline">Cancel</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
