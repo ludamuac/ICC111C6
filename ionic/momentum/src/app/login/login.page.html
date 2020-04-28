@@ -33,7 +33,7 @@
 
       <ion-row>
         <ion-col size="12">
-          <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()">Log In</ion-button>
+          <ion-button color="primary" expand="block" fill="solid" (click)="onSubmit()" [disabled]="loading">Log In</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>    
